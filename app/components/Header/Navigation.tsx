@@ -1,9 +1,13 @@
 import { RiShoppingCartLine as CartIcon } from 'react-icons/ri';
 import { RiMenu3Line as FriesIcon } from 'react-icons/ri';
+import ThemeSwitcher from './ThemeSwitcher';
+import { cookies } from 'next/headers';
 
 const Navigation = () => {
+  const selectedTheme = cookies().get('theme') && cookies().get('theme')!.value;
+
   return (
-    <nav>
+    <nav className="">
       <ul className="flex gap-9">
         <li className="grid place-content-center">
           <button>

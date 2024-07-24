@@ -2,16 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --base-background: #faf8ff;
+    --theme-switcher-button-active-bg: #e6e6e6;
+    --theme-switcher-border: #ededed;
+    --theme-switcher-button: #666666;
+    --theme-switcher-button-active: #171717;
+  }
+
+  html.dark {
+    --base-background: #303030;
+    --theme-switcher-button-active-bg: #292929;
+    --theme-switcher-border: #3e3d3d;
+    --theme-switcher-button: #a1a1a1;
+    --theme-switcher-button-active: #ededed;
+  }
+
+  html.system {
+    @media (prefers-color-scheme: dark) {
+      --base-background: #303030;
+      --theme-switcher-button-active-bg: #292929;
+      --theme-switcher-border: #3e3d3d;
+      --theme-switcher-button: #a1a1a1;
+      --theme-switcher-button-active: #ededed;
+    }
+  }
+  body {
+    background-color: var(--base-background);
+  }
+
+  .themeSwitcher {
+    border-color: var(--theme-switcher-border);
+  }
+  .themeSwitcher > li {
+    color: var(--theme-switcher-button);
+  }
+  .themeSwitcher > li.active {
+    background-color: var(--theme-switcher-button-active-bg);
+    color: var(--theme-switcher-button-active);
   }
 }
