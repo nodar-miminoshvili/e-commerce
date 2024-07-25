@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .container {
+    @apply max-w-screen-xl mx-auto;
+  }
+}
+
 @layer base {
   :root {
     --base-background: #faf8ff;
@@ -9,6 +15,8 @@
     --theme-switcher-border: #ededed;
     --theme-switcher-button: #666666;
     --theme-switcher-button-active: #171717;
+    --category-title-color: #303030;
+    --category-before-bg: white;
   }
 
   html.dark {
@@ -17,6 +25,8 @@
     --theme-switcher-border: #3e3d3d;
     --theme-switcher-button: #a1a1a1;
     --theme-switcher-button-active: #ededed;
+    --category-title-color: white;
+    --category-before-bg: #303030;
   }
 
   html.system {
@@ -26,12 +36,16 @@
       --theme-switcher-border: #3e3d3d;
       --theme-switcher-button: #a1a1a1;
       --theme-switcher-button-active: #ededed;
+      --category-title-color: white;
+      --category-before-bg: #303030;
     }
   }
   body {
     background-color: var(--base-background);
   }
+}
 
+@layer components {
   .themeSwitcher {
     border-color: var(--theme-switcher-border);
   }
@@ -41,5 +55,32 @@
   .themeSwitcher > li.active {
     background-color: var(--theme-switcher-button-active-bg);
     color: var(--theme-switcher-button-active);
+  }
+
+  .category h2 {
+    position: relative;
+    transition: color 0.36s linear;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 90%;
+      height: 110%;
+      transform: scaleX(0);
+      transform-origin: left;
+      background-color: var(--category-before-bg);
+      transition: transform 0.36s ease-in-out;
+      border-top-right-radius: 11px;
+      border-bottom-right-radius: 11px;
+    }
+  }
+  .category:hover h2 {
+    color: var(--category-title-color);
+    &::before {
+      transform: scaleX(1);
+    }
   }
 }
