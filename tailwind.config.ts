@@ -15,6 +15,9 @@ const config: Config = {
       screens: {
         xs: '450px',
       },
+      fontFamily: {
+        dosis: ['var(--font-dosis)'],
+      },
     },
   },
   plugins: [],

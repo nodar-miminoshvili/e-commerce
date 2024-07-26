@@ -1,10 +1,23 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
 import './globals.css';
 import Header from './components/Header/Header';
 import { cookies } from 'next/headers';
+import { Montserrat, Dosis } from 'next/font/google';
 
-const inter = Inter({ subsets: ['latin'] });
+const dosis = Dosis({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal'],
+  display: 'swap',
+  variable: '--font-dosis',
+});
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600', '700'],
+  style: ['normal'],
+  display: 'swap',
+  variable: '--font-montserrat',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -21,11 +34,7 @@ export default async function RootLayout({
     : 'system';
 
   return (
-    <html
-      lang="en"
-      className={`${theme}`}
-      // prefered-theme={theme}
-    >
+    <html lang="en" className={`${dosis.variable} ${montserrat.className}  ${theme}`}>
       <body className={''}>
         <Header selectedTheme={theme} />
         {children}
