@@ -155,7 +155,7 @@
     }
   }
 
-  .showcaseWrapper:hover {
+  .showcaseWrapper.animate {
     .showcase::after {
       animation: slideAfter 3s ease-in-out 0.25s forwards;
     }

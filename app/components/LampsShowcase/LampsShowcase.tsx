@@ -3,10 +3,12 @@ import firstLamp from '@/public/lampsShowcase/lamp1.png';
 import secondLamp from '@/public/lampsShowcase/lamp2.png';
 import thirdLamp from '@/public/lampsShowcase/lamp3.png';
 import fourthLamp from '@/public/lampsShowcase/lamp4.png';
+import Lampsobserver from './LampsObserver';
 
 const LampsShowcase = () => {
   return (
     <section className="container">
+      <Lampsobserver />
       <div className="py-28 px-2.5 showcaseWrapper sm:px-5 md:px-10 md:py-32">
         <h2 className="text-3xl font-dosis font-semibold text-center sm:text-4xl lg:text-left">
           Let There Be Light
