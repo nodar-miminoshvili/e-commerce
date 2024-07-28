@@ -3,6 +3,7 @@ import './globals.css';
 import Header from './components/Header/Header';
 import { cookies } from 'next/headers';
 import { Montserrat, Dosis } from 'next/font/google';
+import HeaderObserver from './components/Header/HeaderObserver';
 
 const dosis = Dosis({
   subsets: ['latin'],
@@ -35,7 +36,8 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className={`${dosis.variable} ${montserrat.className}  ${theme}`}>
-      <body className={''}>
+      <body className="pt-3">
+        <HeaderObserver />
         <Header selectedTheme={theme} />
         {children}
       </body>

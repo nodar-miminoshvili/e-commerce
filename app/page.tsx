@@ -3,7 +3,7 @@ import LampsShowcase from './components/LampsShowcase/LampsShowcase';
 
 export default function Home() {
   return (
-    <main>
+    <main className="py-3">
       <CategoriesSection />
       <LampsShowcase />
     </main>

@@ -5,14 +5,14 @@ import ThemeSwitcher from './ThemeSwitcher';
 
 const Header = ({ selectedTheme }: { selectedTheme: Theme }) => {
   return (
-    <header className="flex items-center justify-between px-5 py-5">
+    <header className="container z-20 flex items-center justify-between px-5 lg:px-12 py-3 sticky top-0 ">
       <span>
         <Image
           src={logo}
           alt="e-commerce logo"
-          width={72}
-          height={72}
-          className="w-[4.5rem] h-[4.5rem]"
+          width={64}
+          height={64}
+          className="w-[4rem] h-[4rem]"
           priority
         />
       </span>
