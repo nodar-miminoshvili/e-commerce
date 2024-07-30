@@ -22,6 +22,7 @@
     --category-before-bg: white;
     --lamps-heading-main: #ffc93c;
     --text-color-default: black;
+    --text-color-iverse: white;
     --navbar-background: white;
     --navbar-border: none;
   }
@@ -36,6 +37,7 @@
     --category-before-bg: #212121;
     --lamps-heading-main: #ffe700;
     --text-color-default: white;
+    --text-color-iverse: black;
     --navbar-background: #474747;
     --navbar-border: 2px solid #303030;
   }
@@ -51,6 +53,7 @@
       --category-before-bg: #212121;
       --lamps-heading-main: #ffe700;
       --text-color-default: white;
+      --text-color-iverse: black;
       --navbar-background: #474747;
       --navbar-border: 2px solid hsl(0, 0%, 50%);
     }
@@ -184,5 +187,8 @@
     background-color: var(--navbar-background);
     @apply drop-shadow-md;
     border-bottom: var(--navbar-border);
+  }
+  .maskBanner {
+    mask: linear-gradient(45deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
   }
 }
