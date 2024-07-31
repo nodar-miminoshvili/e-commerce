@@ -13,7 +13,7 @@ const SugesstionBanner = () => {
       />
       <div className="self-center">
         <h3 className="text-xl font-medium md:text-2xl">Upgrade Your Life with Tech!</h3>
-        <button className="mt-5 font-semibold text-lg border border-[var(text-color-default:black)] px-2 py-1.5 transition-colors hover:text-[var(--text-color-iverse)] hover:bg-[var(--text-color-default)]">
+        <button className="mt-5 font-semibold text-lg border border-[var(--text-color-default)] px-2 py-1.5 transition-colors text-[var(--text-color-iverse)] bg-[var(--text-color-default)] hover:text-[var(--text-color-default)] hover:bg-transparent">
           View More
         </button>
       </div>
