@@ -10,6 +10,7 @@ export default function Home() {
       <LampsShowcase />
       <OriginalsSection />
       <Banner order="first" />
+      <Banner order="second" />
     </main>
   );
 }

@@ -16,22 +16,33 @@ const Banner = ({ order }: { order: 'first' | 'second' }) => {
     },
   };
   return (
-    <div className="container py-16 overflow-hidden   ">
-      <div className={`flex flex-col ${order === 'second' && 'flex-row-reverse'} px-6 sm:flex-row`}>
-        <div className=" bg-[#e9e9e9] p-8">
+    <div className="container py-16 text-black ">
+      <div
+        className={`flex ${
+          order === 'second' ? 'flex-col-reverse sm:flex-row-reverse' : 'flex-col sm:flex-row'
+        } h-[25rem] px-6`}
+      >
+        <div className=" bg-[var(--banner-bg)] p-8 basis-3/5 sm:grid place-content-center md:p-12 xl:p-16 2xl:p-20">
           <h3 className="text-3xl font-semibold mb-3">{bannerContent[order].title}</h3>
           <p className="mb-3.5">{bannerContent[order].text}</p>
-          <button className="font-semibold text-lg px-2 py-1.5 border border-[var(--text-color-default)] transition-colors text-[var(--text-color-iverse)] bg-[var(--text-color-default)] hover:text-[var(--text-color-default)] hover:bg-transparent">
+          <button
+            className="block w-max font-semibold text-lg 
+          px-2 py-1.5 border border-black hover:border-[var(--text-color-default)] 
+          transition-colors text-white bg-black 
+          hover:text-[var(--text-color-default)] hover:bg-transparent"
+          >
             Shop Now
           </button>
         </div>
-        <Image
-          src={bannerContent[order].image}
-          alt="minimalistic shelves"
-          width={600}
-          height={600}
-          className="basis-1/2"
-        />
+        <div className="relative basis-2/5 min-h-[50%] ">
+          <Image
+            src={bannerContent[order].image}
+            alt="minimalistic shelves"
+            fill
+            sizes="(max-width: 640px) 95vw, (max-width: 1280px) 50vw, 500px"
+            className="object-cover"
+          />
+        </div>
       </div>
     </div>
   );
