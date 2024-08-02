@@ -4,14 +4,19 @@ const products = ({
   thumbnail,
   title,
   price,
+  forTrendingSection,
 }: {
   thumbnail: string;
   title: string;
   price: string;
+  forTrendingSection?: boolean;
 }) => {
   return (
-    <li className="border p-2 flex flex-col hover:border-black gap-2 sm:p-4 md:gap-5 ">
-      <div className="relative basis-2/3 w-full min-h-28 h-auto aspect-square">
+    <li
+      className={`border border-[var(--theme-switcher-border)] p-2 flex flex-col hover:border-[var(--text-color-default)] gap-2 sm:p-4 md:gap-5 
+    ${forTrendingSection && 'w-[16rem]'}`}
+    >
+      <div className="relative basis-2/3 w-full min-h-28 h-auto aspect-square bg-white">
         <Image
           src={thumbnail}
           alt={title}

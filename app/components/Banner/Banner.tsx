@@ -16,7 +16,7 @@ const Banner = ({ order }: { order: 'first' | 'second' }) => {
     },
   };
   return (
-    <div className="container py-16 text-black ">
+    <div className="container py-16 text-black overflow-hidden">
       <div
         className={`flex ${
           order === 'second' ? 'flex-col-reverse sm:flex-row-reverse' : 'flex-col sm:flex-row'
